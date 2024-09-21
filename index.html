@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="estilo.css">
+
+    <title>Calculo do IMC</title>
+</head>
+<body>
+    <h1>Vamos calcular o IMC</h1>
+    <h3>IMC = peso / altura²</h3>
+
+    <div id="conteiner">
+        <table>
+            <tr>
+                <th>IMC</th>
+                <th>Classificação</th>
+                <th>Grau de Obesidade</th>
+            </tr>
+            <tr>
+                <td>Menor que 18,5</td>
+                <td>Magreza</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Entre 18,5 e 24,9</td>
+                <td>Normal</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Entre 25,0 e 29,9</td>
+                <td>Sobrepeso</td>
+                <td>I</td>
+            </tr>
+            <tr>
+                <td>Entre 30,0 e 39,9</td>
+                <td>Obesidade</td>
+                <td>II</td>
+            </tr>
+            <tr>
+                <td>Maior que 40,0</td>
+                <td>Obesidade Grave</td>
+                <td>III</td>
+            </tr>
+        </table>
+    </div>
+    <div id="exibe_resultado">Seu IMC é = </div>
+</body>
+
+    <script type="text/javascript">
+
+        var nome = window.prompt('Qual é seu nome?');
+
+        alert("Olá " + nome + "! Vamos começar!");
+        
+        var peso = parseFloat(prompt("Digite seu peso:"));
+        var altura = parseFloat(prompt("Digite sua altura:"));
+        
+        var imc = calcule(peso, altura);
+
+        var divLocal = document.getElementById('exibe_resultado');
+        divLocal.innerHTML += imc.toFixed(2);
+
+        function calcule(peso, altura)
+        {
+            var resultado = 0;
+            resultado = peso / (altura * altura);
+            return resultado;
+        }
+
+    </script>
+</html>
